@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fruit Ninja - replica
 Simple replica of mobile game.
 
@@ -24,3 +25,6 @@ During game targets spawn below the screen at random rate from where they are th
 ## Technologies
 * Unity 2020.3.1f1
 * Git
+=======
+# Fruit-Ninja
+>>>>>>> 97941fcd64a32b0293dec44f3c287fc038993a4f
