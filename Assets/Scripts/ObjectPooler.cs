@@ -12,7 +12,7 @@ public class ObjectPooler : MonoBehaviour
     {
         [SerializeField] Target _prefab;
         [SerializeField] int _size;
-        [SerializeField] bool _canSpawn = true; // ✅ new field in inspector
+        [SerializeField] bool _canSpawn = true; 
 
         public Target Prefab => _prefab;
         public int Size => _size;

@@ -36,17 +36,17 @@ public class SpawnManager : MonoBehaviour
 
     GameManager gameManager;
 
-    // ✅ Cached list of indices that are allowed to spawn
+    //  Cached list of indices that are allowed to spawn
     List<int> allowedPoolIndices = new List<int>();
 
     void Start()
     {
-        gameManager = GameManager.Instance;
-        CacheAllowedPools(); // ✅ Cache the prefabs marked as CanSpawn = true
+        
+        CacheAllowedPools(); 
         StartCoroutine(SelectSpawnOption());
     }
 
-    // ✅ Build a list of all pool indices that can actually spawn
+    //  Build a list of all pool indices that can actually spawn
     void CacheAllowedPools()
     {
         allowedPoolIndices.Clear();
@@ -81,7 +81,7 @@ public class SpawnManager : MonoBehaviour
             else
                 selectedCoroutine = StartCoroutine(SpawnOneAtOnce());
 
-            yield return selectedCoroutine; // Wait for chosen coroutine to finish
+            yield return selectedCoroutine; 
         }
     }
 
@@ -93,12 +93,11 @@ public class SpawnManager : MonoBehaviour
         {
             int numberOfTargetsToSpawn = Random.Range(minTargetsInAllAtOnce, maxTargetsInAllAtOnce);
             Vector3 randomVerticalForce = RandomVerticalForce();
-
+ 
             for (int i = 0; i < numberOfTargetsToSpawn; i++)
             {
                 int poolIndex = allowedPoolIndices[Random.Range(0, allowedPoolIndices.Count)];
                 Target newTarget = targetsPooler.GetFromPool(poolIndex);
-
                 newTarget.ResetForces();
                 newTarget.AddForce(randomVerticalForce);
                 newTarget.AddRandomHorizontalForce(maxHorizontalForce);

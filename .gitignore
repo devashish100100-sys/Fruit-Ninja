@@ -67,7 +67,7 @@ sysinfo.txt
 mono_crash.*
 
 # Builds
-*.apk
+# *.apk
 *.aab
 *.unitypackage
 *.unitypackage.meta
@@ -102,7 +102,7 @@ InitTestScene*.unity*
 
 
 # Unity build folders
-/WebGLBuild/
+/WebGLBuild/+
 /Build/
 /Library/
 /Temp/

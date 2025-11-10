@@ -28,16 +28,16 @@ public class GameOverUI : MonoBehaviour
 
     public void OnExitButton()
     {
-#if UNITY_EDITOR
-        // only exists inside editor
-        UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_ANDROID || UNITY_IOS
-        // optional small delay before quit for mobile
-        StartCoroutine(QuitAfterDelay(0.2f));
-#else
-        Application.Quit();
-#endif
-    }
+        #if UNITY_EDITOR
+                // only exists inside editor
+                UnityEditor.EditorApplication.isPlaying = false;
+        #elif UNITY_ANDROID || UNITY_IOS
+                // optional small delay before quit for mobile
+                StartCoroutine(QuitAfterDelay(0.2f));
+        #else
+                Application.Quit();
+        #endif
+            }
 
 #if UNITY_ANDROID || UNITY_IOS
     private System.Collections.IEnumerator QuitAfterDelay(float seconds)
