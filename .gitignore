@@ -108,4 +108,4 @@ InitTestScene*.unity*
 /Temp/
 /Logs/
 /obj/
-/UserSettings/
+/UserSettings/"WebGLBuild/" 
